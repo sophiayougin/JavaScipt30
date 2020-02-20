@@ -1,0 +1,32 @@
+:root{
+    --spacing: 10px;
+    --base: yellow;
+    --blur: 10px;
+}
+html{
+    background-color: cadetblue;
+}
+h1{
+    text-align: center;
+}
+.labels{
+    font-size: 30px;
+   
+}
+.controls{
+    display:block;
+    margin-bottom: 50px;
+    margin-right: 50px;;
+}
+img{
+    display: block;
+    margin:auto;
+    margin-top: 5rem;
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur));
+    
+}
+#heading{
+    color: var(--base);
+}

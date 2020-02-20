@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Drum Kit</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <h1 id="myHeading">Hello World</h1>
+  <script src="script.js"></script>
+  <div class = "keys">
+    <div data-key="65" class= "key">
+      <kbd>A</kbd>
+      <span class="sound">Coin</span>
+    </div>
+    <div data-key="83" class= "key">
+      <kbd>S</kbd>
+      <span class="sound">HiHat</span>
+    </div>
+    <div data-key="68" class= "key">
+      <kbd>D</kbd>
+      <span class="sound">Kick</span>
+    </div>
+    <div data-key="70" class= "key">
+      <kbd>F</kbd>
+      <span class="sound">Bell</span>
+    </div>
+  </div>
+  <audio data-key="65"  src="Coin.mp3"></audio>
+  <audio data-key="83"  src="Hi-Hat.mp3"></audio>
+  <audio data-key="68"  src="Kick.mp3"></audio>
+  <audio data-key="70"  src="Door-bell.mp3"></audio>
+</body>
+</html>
