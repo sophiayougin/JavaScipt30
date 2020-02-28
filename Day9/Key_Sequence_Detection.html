@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Key Sequence Detection!</title>
+        <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+    </head>
+    <body>
+        <h2>Press Any Key!</h2>
+        <script>
+            const pressed = [];
+            const word = 'bubu';
+            function keyDetection(e){
+                pressed.push(e.key);
+                pressed.splice(-word.length-1,pressed.length-word.length);
+                console.log(pressed);
+                if(pressed.join('').includes(word)){
+                    console.log(`${word} is there! Tada!!`);
+                    cornify_add();
+                }
+            }
+            window.addEventListener('keydown',keyDetection);
+            
+        </script>
+    </body>
+</html>

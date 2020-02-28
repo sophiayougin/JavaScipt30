@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Console Tricks!</title>
+    </head>
+    <body>
+        <p onclick="makeChange()">Please Click Here</p>
+        <script>
+            function makeChange(){
+                const p = document.querySelector('p');
+                p.style.color = 'red';
+                p.style.fontSize = '50px';
+                p.innerText = "Change Happened"
+            }
+           
+            const dogs =[{name: 'George',age: 2, color: 'Black'},{name: 'Goofy',age: 1.5, color: 'White'},{name: 'Guddu',age: 1, color: 'Grey'}];
+            //Regular
+            console.log('Hello there!');
+            //Interpolated
+            console.log('Hello I am a %s','string');
+            const variable = 'String';
+            //ES6
+            console.log(`Hello i am a ${variable}`);
+            //styled
+            console.log('%c I am a Super String','font-size: 20px; font-color: blue');
+            //warning
+            console.warn('This is the Last and First Warning!');
+            //Error
+            console.error('This is an Error!');
+            //Info
+            console.info('The hottest chili pepper in the world is so hot it could kill you.');
+            //Testing
+            console.assert(1 === 2,'This is wrong dude');
+            const p = document.querySelector('p');
+            console.assert(p.classList.contains('wow'),'Doesn\'t contain');
+            //Clearing
+            console.clear();
+            //Viewing DOM Element
+            console.log(p);
+            console.dir(p);
+            //Grouping
+            dogs.forEach(dog => {
+                console.groupCollapsed(`${dog.name}`);
+                console.log(`This is ${dog.name}`);
+                console.log(`Age of ${dog.name} is ${dog.age}`);
+                console.log(`Color of ${dog.name} is ${dog.color}`);
+                console.groupEnd(`${dog.name}`);
+            })
+            //Count
+            console.count('Bubu');
+            console.count('Dainu');
+            console.count('Bubu');
+            console.count('Dainu');
+            console.count('Bubu');
+            console.count('Dainu');
+            //Timing
+            console.time('fetching data');
+            fetch('https://api.github.com/users/wesbos')
+            .then(data => data.json())
+            .then(data => {
+                console.timeEnd('fetching data');
+                console.log(data);
+            });
+            //table
+            console.table(dogs);
+        </script>
+    </body>
+</html>
