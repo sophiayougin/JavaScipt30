@@ -94,7 +94,7 @@
                      let flag = false;
                      if(e.shiftKey && this.checked){
                          checkboxes.forEach(checkbox => {
-                            if(checkbox === lastChecked || checkbox === this ){
+                            if(checkbox === lastChecked && checkbox === this ){
                                 flag = !flag;
                             }
                             if(flag){
