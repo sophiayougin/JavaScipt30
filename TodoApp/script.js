@@ -8,14 +8,7 @@
           let allTasks = {};
           let ul;
           let li;
-          //Adding Items to the list
-          function todoHandler(e){
-            refresh();
-            if(e.key =='Enter' && todo.value !== ""){
-              allTasks[todo.value] = {task:todo.value,status:'pending'};
-              todo.value = null;
-            }
-          }
+          
           //creating todos
           function createTodos(task){
             let span = document.createElement('span');
@@ -27,6 +20,14 @@
             let img = document.createElement('img');
             img.src = 'https://www.freeiconspng.com/uploads/black-circle-close-button-png-5.png';
             span.appendChild(img);
+          }
+          //Adding Items to the list
+          function todoHandler(e){
+            if(e.key =='Enter' && todo.value !== ""){
+              allTasks[todo.value] = {task:todo.value,status:'pending'};
+              todo.value = null;
+            }
+            displayAll();
           }
           //strike out completed task and removing
           function strikeOutAndRemove(e){
@@ -45,7 +46,7 @@
             }
           }
           //Display All tasks in the list
-          function displayAll(e){
+          function displayAll(){
             refresh();
             for (const key in allTasks) {
               if (allTasks.hasOwnProperty(key)){
